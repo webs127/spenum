@@ -1,7 +1,9 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:spenum/app/route.dart';
+import 'package:spenum/core/color_manager.dart';
+import 'package:spenum/core/textstyle_manager.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -24,31 +26,26 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     start();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: DecoratedBox(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(colors: [
-            Colors.red,
-            Colors.black
-          ],
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter
-          )
-        ),
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+                colors: [ColorManager.red, ColorManager.black],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter)),
         child: SizedBox(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
-          child: const Center(
-            child: Text("SPENUM",
-             style: TextStyle(
-              fontSize: 40,
-              fontStyle: FontStyle.italic,
-              fontWeight: FontWeight.bold,
-              color: Colors.white
-            ),
-            
+          child: Center(
+            child: Text(
+              "SPENUM",
+              style: italicTextStyle(
+                  fontSize: 40.sp,
+                  fontStyle: FontStyle.italic,
+                  color: Colors.white),
             ),
           ),
         ),
