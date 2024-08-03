@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:spenum/app/route.dart';
-import 'package:spenum/core/textstyle_manager.dart';
+import 'package:spenum/core/color_manager.dart';
 import 'package:spenum/widgets/custom_materialbutton.dart';
 
 class LandingScreen extends StatefulWidget {
@@ -16,9 +16,9 @@ class _LandingScreenState extends State<LandingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: DecoratedBox(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
             gradient: LinearGradient(
-                colors: [Colors.red, Colors.black],
+                colors: [ColorManager.red, Colors.black],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter)),
         child: SizedBox(
@@ -37,7 +37,9 @@ class _LandingScreenState extends State<LandingScreen> {
                 height: 15.h,
               ),
               CustomMaterialButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, RouteManager.settings);
+                },
                 title: "Settings",
               ),
             ],
