@@ -1,9 +1,4 @@
-import 'dart:async';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:spenum/app/route.dart';
-import 'package:spenum/core/color_manager.dart';
-import 'package:spenum/core/textstyle_manager.dart';
+import 'package:spenum/app/index.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
